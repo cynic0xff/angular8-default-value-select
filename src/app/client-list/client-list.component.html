@@ -1,0 +1,12 @@
+<form [formGroup]="productCategory">
+    <mat-form-field class="full-width">
+      <mat-select placeholder="Product Category" formControlName="productCategory">
+        <mat-option>--</mat-option>
+        <mat-option *ngFor="let category of productCategories" [value]="category">
+          {{category.name}} - {{category.description}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+    <p>{{productCategory.get('productCategory').value | json}}</p>
+    </form>
